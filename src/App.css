@@ -1,38 +1,102 @@
+body {
+  background: url(picture.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: rgb(38, 53, 114);
+}
+p {
+  font-family: 'Rajdhani', sans-serif;
+padding: 5px;
+margin: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Patients info */
+.whole-info {
+  width: 60%;
+  margin: 30px;
+  padding: 10px;
+  height: 100vh;
+}
+.myInput{
+  border-radius: 5px;
+  height: 30px;
+  font-family: 'Rajdhani', sans-serif;
+}
+.name {
+  width: 100%;
+  margin: 0px;
+  height: 10px;
+  padding: 10px;
+}
+.p-name {
+  display: flex;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.prescriptions {
+  border-radius: 5px;
+}
+textarea {
+  border-radius: 5px;
+  margin-top: 20px;
+  height: 140px;
+  padding: 10px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Patient card */
+.cards {
+  margin-left: 10px;
+}
+
+.add-card {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(26, 115, 129);
   color: white;
+  font-weight: bold;
+}
+.delete-card {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(129, 26, 72);
+  color: white;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.patient{
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.p-selected {
+  background-color: rgb(203, 227, 230);
+}
+.p-default {
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.date {
+  font-weight: bold;
+  
 }
