@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import PatientCards from "./PatientCards";
 import PatientInfo from "./PatientInfo";
@@ -9,6 +9,20 @@ function App() {
     localStorage.cards ? JSON.parse(localStorage.cards) : []
   );
   const [selectedPatient, setSelectedPatient] = useState(false);
+
+const cardsContainerRef = useRef(null);
+const handleEmptyClick = (e) => {
+  if (!cardsContainerRef.current.contains(e.target)){
+    setSelectedPatient(false)
+  }
+}
+
+useEffect(()=> {
+  document.addEventListener('click', handleEmptyClick);
+  return ()=> {
+    document.removeEventListener('click', handleEmptyClick)
+  };
+}, [])
 
 useEffect(()=>{
   localStorage.setItem('cards', JSON.stringify(cards))
@@ -56,6 +70,7 @@ useEffect(()=>{
         cardDelete={cardDelete}
         selectedPatient={selectedPatient}
         setSelectedPatient={setSelectedPatient}
+        cardsContainerRef={cardsContainerRef}
       />
 
       <PatientInfo

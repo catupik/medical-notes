@@ -6,12 +6,18 @@ function PatientInfo({selectedPatient, updateCard, cardDelete}) {
       [myInput] : value
     })
   }
+
+
+  const handleClick = (e) => {
+    e.stopPropagation();
+  }
+
   if (!selectedPatient){ return <p></p>
 
   }
 
   return (
-    <div className="whole-info">
+    <div className="whole-info" onClick={handleClick}>
       <div className="p-name">
         <input 
           type="date" 

@@ -1,11 +1,11 @@
-function PatientCards({cardAdd, cards, setCards, cardDelete, selectedPatient, setSelectedPatient}){
+function PatientCards({cardAdd, cards, setCards, cardDelete, selectedPatient, setSelectedPatient, cardsContainerRef}){
 
     
     return(
 
         
 
-        <div className="cards">
+        <div className="cards" ref={cardsContainerRef}>
             <h1>Patients' Cards</h1>
             
             <button className="add-card" onClick={cardAdd}>New Card</button>
